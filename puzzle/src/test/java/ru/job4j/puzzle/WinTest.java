@@ -18,7 +18,8 @@ public class WinTest {
                 {0, 0, 1, 0, 0},
                 {0, 0, 1, 0, 0},
         };
-        assertThat(Win.check(board), is(true));
+        boolean result = Win.check(board);
+        Assert.assertTrue(result);
     }
 
     @Test
@@ -30,7 +31,8 @@ public class WinTest {
                 {0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0},
         };
-        assertThat(Win.check(board), is(true));
+        boolean result = Win.check(board);
+        Assert.assertTrue(result);
     }
 
     @Test
@@ -42,7 +44,8 @@ public class WinTest {
                 {0, 0, 1, 0, 0},
                 {0, 0, 1, 0, 0},
         };
-        assertThat(Win.check(board), is(false));
+        boolean result = Win.check(board);
+        Assert.assertFalse(result);
     }
 
     @Test
@@ -54,6 +57,7 @@ public class WinTest {
                 {0, 0, 0, 1, 0},
                 {1, 1, 1, 1, 0},
         };
-        assertThat(Win.check(board), is(false));
+        boolean result = Win.check(board);
+        Assert.assertFalse(result);
     }
 }
