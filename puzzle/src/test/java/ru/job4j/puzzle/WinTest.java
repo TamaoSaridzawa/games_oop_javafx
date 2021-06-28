@@ -12,14 +12,13 @@ public class WinTest {
     @Test
     public void whenVerticalWin() {
         int[][] board = {
-                {0, 0, 0, 0, 1},
-                {0, 0, 0, 0, 1},
-                {0, 0, 0, 0, 1},
-                {0, 0, 0, 0, 1},
-                {0, 0, 0, 0, 1},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
         };
-        boolean res = Win.diagonalChek(board);
-        Assert.assertTrue(res);
+        assertThat(Win.check(board), is(true));
     }
 
     @Test
@@ -27,37 +26,34 @@ public class WinTest {
         int[][] board = {
                 {0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0},
-                {0, 0, 0, 0, 0},
                 {1, 1, 1, 1, 1},
                 {0, 0, 0, 0, 0},
+                {0, 0, 0, 0, 0},
         };
-        boolean res = Win.diagonalChek(board);
-        Assert.assertTrue(res);
+        assertThat(Win.check(board), is(true));
     }
 
     @Test
-    public void whenNotWin1() {
+    public void whenNotWinV() {
         int[][] board = {
+                {0, 0, 1, 0, 0},
+                {0, 1, 1, 0, 0},
                 {0, 0, 0, 0, 0},
-                {0, 0, 0, 1, 0},
-                {1, 1, 1, 0, 0},
-                {0, 0, 0, 1, 0},
-                {0, 0, 0, 0, 0},
+                {0, 0, 1, 0, 0},
+                {0, 0, 1, 0, 0},
         };
-        boolean res = Win.diagonalChek(board);
-        Assert.assertFalse(res);
+        assertThat(Win.check(board), is(false));
     }
 
     @Test
-    public void whenNotWin2() {
+    public void whenNotWinL() {
         int[][] board = {
-                {1, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0},
+                {0, 0, 0, 1, 0},
                 {1, 1, 1, 1, 0},
         };
-        boolean res = Win.diagonalChek(board);
-        Assert.assertFalse(res);
+        assertThat(Win.check(board), is(false));
     }
 }
