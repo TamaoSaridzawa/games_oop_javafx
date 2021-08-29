@@ -37,7 +37,15 @@ public class BishopBlackTest {
     }
 
     @Test
-    public void isDiagonal() {
+    public void isDiagonalTrue() {
+        BishopBlack bishopBlack = new BishopBlack(Cell.B1);
+        Assert.assertTrue(bishopBlack.isDiagonal(bishopBlack.position(), Cell.D3));
+    }
+
+    @Test
+    public void isDiagonalFalse() {
+        BishopBlack bishopBlack = new BishopBlack(Cell.B1);
+        Assert.assertFalse(bishopBlack.isDiagonal(bishopBlack.position(), Cell.D7));
     }
 
     @Test
